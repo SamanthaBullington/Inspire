@@ -9,9 +9,6 @@ class App {
   quoteController = new QuoteController();
 
   // weatherController = new WeatherController();
-
-  // toDoController = new ToDoController();
-
 }
 
 window["app"] = new App();
