@@ -5,8 +5,8 @@ export default class Quote {
   }
 
   get Template() {
-
-    return /*html*/`
+    return `
+    <div>${this.content} - ${this.author}</div>
 
     `
   }

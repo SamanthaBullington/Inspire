@@ -1,12 +1,12 @@
-export default class ToDo {
-  constructor(data) {
-    this.title = data.title
-  }
+// export default class ToDo {
+//   constructor(data) {
+//     this.title = data.title
+//   }
 
-  get Template() {
+//   get Template() {
 
-    return /*html*/`
+//     return /*html*/`
 
-    `
-  }
-}
+//     `
+//   }
+// }

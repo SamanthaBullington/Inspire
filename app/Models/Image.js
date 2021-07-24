@@ -3,11 +3,4 @@ export default class Image {
     this.imgUrl = data.imgUrl;
     this.author = data.author;
   }
-
-  get Template() {
-
-    return /*html*/`
-  
-    `
-  }
 }
