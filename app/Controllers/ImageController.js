@@ -17,5 +17,4 @@ export default class ImageController {
       console.error(error)
     }
   }
-
 }

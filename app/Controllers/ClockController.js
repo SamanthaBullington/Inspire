@@ -1,6 +1,25 @@
-function myClock() {
-  const date = new Date();
-  const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+export function myClock() {
+  function currentClock() {
+    let date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let cycle = "PM";
 
+    //AM cycle
+    if (hours == 0) hours = 12;
+    if (hours > 12) {
+      hours = hours - 12;
+      cycle = "AM";
+    }
+
+    //If the hours are less than 2 digits, puts 0 in front of the single digit number
+    hours = hours < 10 ? `0${hours}` : hours;
+    minutes = minutes < 10 ? `0${minutes}` : minutes;
+
+    let time = `${hours}:${minutes} ${cycle}`;
+    setInterval(currentClock, 1000);
+    document.getElementById("clock").innerText = time;
+  }
+  currentClock();
 }
 

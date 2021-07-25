@@ -8,6 +8,10 @@ class AppState extends EventEmitter {
   currentQuote = null
 
   currentWeather = null
+  currentTime = null
+
+  currentToDo = []
+
 }
 
 export const ProxyState = new Proxy(new AppState(), {

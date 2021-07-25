@@ -1,6 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import Weather from "../Models/Weather.js";
-import { sandbox } from '../Services/AxiosService.js'
+import { sandbox } from '../Services/AxiosService.js';
 
 class WeatherService {
   constructor() {

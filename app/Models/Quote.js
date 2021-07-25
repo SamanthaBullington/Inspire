@@ -5,9 +5,8 @@ export default class Quote {
   }
 
   get Template() {
-    return `
-    <div>${this.content} - ${this.author}</div>
-
+    return /*HTML*/`
+    <div class ="content">"${this.content}"</div> <span class ="hide">by ${this.author}</span>
     `
   }
 }
