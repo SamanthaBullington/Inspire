@@ -18,9 +18,6 @@ export default class ToDo {
       <span input="checkbox" class="fa fa-times action" onclick="app.toDoController.removeToDo('${this.id}')"></span></label></li></div></div></div>
       <div class="p-2 d-flex">
       <form onsubmit="app.toDoController.postToDo()" class="p-2">
-          <input type="text" name="toDoAdd" placeholder="Task..." required minlength="3"
-              width="48">
-          <button type="submit" class="btn btnEdit">Add task +</button>
       </form>
   </div>`
   }
