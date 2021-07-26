@@ -10,11 +10,21 @@ class ToDoService {
   //   console.log(res.data);
   //   ProxyState.currentToDo = res.data.map(t => new ToDo(s))
   // }
-  async postToDo() {
-    const res = await sandbox.post('sambullington/todos', ProxyState.currentToDo)
+  async postToDo(userdata) {
+    const res = await sandbox.post('sambullington/todos', userdata)
     console.log(res.data)
+    console.log('todoservice posttodo')
     const newtodo = new ToDo(res.data)
     ProxyState.currentToDo = [...ProxyState.currentToDo, newtodo]
+  }
+  removeToDo(id) {
+    ProxyState.currentToDo = ProxyState.currentToDo.filter(todo => todo.id != id)
+  }
+  toggleCheckbox(id) {
+    console.log('toggling')
+    let found = ProxyState.currentToDo.find(t => id == t.id)
+    found.completed = !found.completed
+    ProxyState.currentToDo = ProxyState.currentToDo
   }
 }
 
