@@ -26,6 +26,13 @@ class ToDoService {
     found.completed = !found.completed
     ProxyState.currentToDo = ProxyState.currentToDo
   }
+
+  async loadToDo() {
+    const res = await sandbox.get('sambullington/todos')
+    console.log("hello from tdserve" + res.data);
+    ProxyState.currentToDo = res.data.map(s => new ToDo(s))
+    console.log(ProxyState.currentToDo)
+  }
 }
 
 export const todoService = new ToDoService();

@@ -35,28 +35,31 @@
             <div class="row" id="greeting">"Hello Samantha"
             </div>
 
-            <div class="row" id="todolist">
-                <div class="col-4 m-3 taskCard">
-                    <div class="rounded shadow-light bg-light">
-                        <div
-                            class="d-flex justify-content-around align-items-center rounded-top text-light text-center p-3">
-                            <h1><b>To-Do List</b></h1>
-                        </div>
-                        <div class="p-2 ">
-                            <p class="taskCard">
-                            <ul class="p-2">Task list</ul>
-                            </p>
-                        </div>
-                        <div class="p-2 d-flex">
-                            <form onsubmit="app.toDoController.postToDo()" class="p-2">
-                                <input type="text" name="toDoAdd" placeholder="Task..." required minlength="3"
-                                    width="48">
-                                <button type="submit" class="btn btnEdit">Add task +</button>
-                            </form>
+
+            <button class="btn-success" onclick="app.toDoController.showToDo()">Click Me</button>
+            <div id="myToDo">
+                <div class="row" id="todolist">
+                    <div class="col-4 m-3 taskCard">
+                        <div class="rounded shadow-light bg-light">
+                            <div
+                                class="d-flex justify-content-around align-items-center rounded-top text-light text-center p-3">
+                                <h1><b>To-Do List</b></h1>
+                            </div>
+                            <div class="p-2 ">
+                                <p class="taskCard">
+                                <ul class="p-2">Task list</ul>
+                                </p>
+                            </div>
+                            <div class="p-2 d-flex">
+                                <form onsubmit="app.toDoController.postToDo()" class="p-2">
+                                    <input type="text" name="toDoAdd" placeholder="Task..." required minlength="3"
+                                        width="48">
+                                    <button type="submit" class="btn btnEdit">Add task +</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
     </main>
 

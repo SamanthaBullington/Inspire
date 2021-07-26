@@ -10,6 +10,7 @@ function _drawToDo() {
 export default class ToDoController {
   constructor() {
     ProxyState.on('currentToDo', _drawToDo)
+    this.loadToDo()
   }
   async postToDo() {
     event.preventDefault()
@@ -35,5 +36,23 @@ export default class ToDoController {
   toggleCheckbox(id) {
     todoService.toggleCheckbox(id)
     console.log('toggle')
+  }
+
+  showToDo() {
+    var todolist = document.getElementById("myToDo");
+    if (todolist.style.display === "none") {
+      todolist.style.display = "block";
+    } else {
+      todolist.style.display = "none";
+    }
+  }
+
+  async loadToDo() {
+    console.log('loadToDo controller')
+    try {
+      await todoService.loadToDo()
+    } catch (error) {
+      console.error("failed to get To Do list")
+    }
   }
 }

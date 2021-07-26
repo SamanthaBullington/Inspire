@@ -3,16 +3,16 @@ export function myClock() {
     let date = new Date();
     let hours = date.getHours();
     let minutes = date.getMinutes();
-    let cycle = "PM";
+    let cycle = "AM";
 
-    //AM cycle
+    //PM cycle
     if (hours == 0) hours = 12;
     if (hours > 12) {
       hours = hours - 12;
-      cycle = "AM";
+      cycle = "PM";
     }
 
-    //If the hours are less than 2 digits, puts 0 in front of the single digit number
+    //If the hours are less than 2 digits, puts 0 in front of the single digi
     hours = hours < 10 ? `0${hours}` : hours;
     minutes = minutes < 10 ? `0${minutes}` : minutes;
 
