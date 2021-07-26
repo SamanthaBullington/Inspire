@@ -17,14 +17,18 @@ class ToDoService {
     const newtodo = new ToDo(res.data)
     ProxyState.currentToDo = [...ProxyState.currentToDo, newtodo]
   }
-  removeToDo(id) {
+  async removeToDo(id) {
+    const res = await sandbox.delete('sambullington/todos/' + id)
     ProxyState.currentToDo = ProxyState.currentToDo.filter(todo => todo.id != id)
+    console.log(res.data)
   }
-  toggleCheckbox(id) {
-    console.log('toggling')
+  async toggleCheckbox(id) {
     let found = ProxyState.currentToDo.find(t => id == t.id)
     found.completed = !found.completed
+    const res = await sandbox.put('sambullington/todos/' + id, { completed: found.completed })
+    console.log('YES IT TOGGLING')
     ProxyState.currentToDo = ProxyState.currentToDo
+
   }
 
   async loadToDo() {

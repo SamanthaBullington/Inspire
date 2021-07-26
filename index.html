@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/style/main.css">
     <link rel="stylesheet" href="assets/style/style.css">
     <title>Inspire</title>
@@ -26,7 +27,11 @@
     <main class="container">
         <id id="app">
 
-            <div class="row" id="weather">
+            <div class="row">
+                <div class="col-4 clock" id="clock" onload="clock()">
+                </div>
+                <div class="col-4 offset-6" id="weather">
+                </div>
             </div>
 
             <div class="row clock" id="clock" onload="clock()">
@@ -35,30 +40,13 @@
             <div class="row" id="greeting">"Hello Samantha"
             </div>
 
+            <div class="row" id="taskcount">0</div>
 
-            <button class="btn-success" onclick="app.toDoController.showToDo()">Click Me</button>
+
+            <!-- <button class="btn-success" onclick="app.toDoController.showToDo()">Click Me</button> -->
+
             <div id="myToDo">
                 <div class="row" id="todolist">
-                    <div class="col-4 m-3 taskCard">
-                        <div class="rounded shadow-light bg-light">
-                            <div
-                                class="d-flex justify-content-around align-items-center rounded-top text-light text-center p-3">
-                                <h1><b>To-Do List</b></h1>
-                            </div>
-                            <div class="p-2 ">
-                                <p class="taskCard">
-                                <ul class="p-2">Task list</ul>
-                                </p>
-                            </div>
-                            <div class="p-2 d-flex">
-                                <form onsubmit="app.toDoController.postToDo()" class="p-2">
-                                    <input type="text" name="toDoAdd" placeholder="Task..." required minlength="3"
-                                        width="48">
-                                    <button type="submit" class="btn btnEdit">Add task +</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
     </main>
