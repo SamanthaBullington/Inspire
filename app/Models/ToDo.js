@@ -6,9 +6,10 @@ export default class ToDo {
     this.description = data.description
   }
 
+  ///NO TASKS = NO LISTS
   get Template() {
     return /*html*/`<div class="">
-    <div class="rounded shadow-light bg-light ">
+    <div class="rounded shadow-light bg-light" onload="app.toDoController._drawToDo()">
       <div class="d-flex justify-content-around align-items-center rounded-top text-light text-center p-3">
       <li class= "taskCard">
       <label for="checkbox">
